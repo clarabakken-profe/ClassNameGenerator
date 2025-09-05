@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Generador de Nombres de Clase</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      padding: 50px;
+      background: #f0f8ff;
+    }
+
+    h1 {
+      color: #2c3e50;
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 18px;
+      background-color: #2980b9;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #3498db;
+    }
+
+    .result {
+      margin-top: 40px;
+      font-size: 28px;
+      color: #34495e;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎡 Generador de Nombres de Clase 🎨</h1>
+  <p>Haz clic para girar las ruedas y obtener un nombre divertido</p>
+  <button onclick="spinWheels()">🎲 Girar</button>
+
+  <div class="result" id="result">—</div>
+
+  <script>
+    const animals = [
+      "Tigre", "Delfín", "Lobo", "Mariposa", "León",
+      "Zorro", "Tortuga", "Gato", "Conejo", "Águila",
+      "Serpiente", "Oso", "Rana", "Caballo", "Pájaro"
+    ];
+
+    const colors = [
+      "Rojo", "Azul", "Verde", "Amarillo", "Naranja",
+      "Rosa", "Morado", "Negro", "Blanco", "Marrón",
+      "Gris", "Turquesa", "Dorado", "Plateado", "Celeste"
+    ];
+
+    function getRandomItem(arr) {
+      return arr[Math.floor(Math.random() * arr.length)];
+    }
+
+    function spinWheels() {
+      const animal = getRandomItem(animals);
+      const color = getRandomItem(colors);
+      const result = `${animal} ${color}`;
+      document.getElementById("result").textContent = `Tu nombre de clase es: ${result}`;
+    }
+  </script>
+
+</body>
+</html>
